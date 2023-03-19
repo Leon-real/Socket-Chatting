@@ -6,7 +6,7 @@ const nickname = document.querySelector('#nickname');
 const chatList = document.querySelector('.chatting-list');
 const chatInput = document.querySelector('.chatting-input');
 const sendButton = document.querySelector('.send-button');
-
+const displayContainer = document.querySelector('.display-container');
 
 
 // 메세지 보내기
@@ -23,7 +23,8 @@ socket.on('chatting', (data) => {
     console.log(data)
     const { name, msg, time }= data;
     const item = new LiModel(name, msg, time);
-    item.makeLi()
+    item.makeLi();
+    displayContainer.scrollTo(0, displayContainer.scrollHeight);
 
 });
 
