@@ -5,19 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Socket Chatting App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Simple Socket Chatting App</h1>
     <div class="wrapper">
         <div class="user-container">
-            대화명 : <input type="text" id="nickname">
+            <label for ='nickname'>대화명</label>
+            <input type="text" id="nickname">
         </div>
         <div class='display-container'>
-            <ul class="chatting-list"></ul>
+            <ul class="chatting-list">
+                <li>
+                    <span class="profile">
+                        <span class="user">닉네임</span>
+                        <img src="https://placeimg.com/50/50/any" alt="any">
+                    </span>
+                    <span class="message">메세지 내용</span>
+                    <span class="message-time"> 시간 </span>
+                </li>
+            </ul>
         </div>
         <div class="input-container">
-            <input type="text" class="chatting-input">
-            <button class="send-button">전송</button>
+            <span>
+                <input type="text" class="chatting-input">
+                <button class="send-button">전송</button>
+            </span>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
