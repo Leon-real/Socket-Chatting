@@ -1,13 +1,10 @@
 'use strict'
 const socket = io();
-
-
 const nickname = document.querySelector('#nickname');
 const chatList = document.querySelector('.chatting-list');
 const chatInput = document.querySelector('.chatting-input');
 const sendButton = document.querySelector('.send-button');
 const displayContainer = document.querySelector('.display-container');
-
 
 // chatting-input클래스 안에서 엔터 키를 누를 경우
 chatInput.addEventListener('keypress', (event)=>{
@@ -26,7 +23,6 @@ function sendmessage() {
     };
     socket.emit("chatting", param);
 };
-
 
 // 메세지 받기
 socket.on('chatting', (data) => {
