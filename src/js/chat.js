@@ -9,14 +9,24 @@ const sendButton = document.querySelector('.send-button');
 const displayContainer = document.querySelector('.display-container');
 
 
+// chatting-input클래스 안에서 엔터 키를 누를 경우
+chatInput.addEventListener('keypress', (event)=>{
+    if (event.keyCode === 13) {
+        sendmessage()
+    }
+})
+
 // 메세지 보내기
-sendButton.addEventListener('click', () => {
+sendButton.addEventListener('click', sendmessage);
+//메세지 보내기 함수
+function sendmessage() {
     const param = {
         name : nickname.value,
         msg : chatInput.value
     };
     socket.emit("chatting", param);
-});
+};
+
 
 // 메세지 받기
 socket.on('chatting', (data) => {
