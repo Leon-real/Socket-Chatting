@@ -21,6 +21,6 @@ io.on('connection', (socekt) => {
     // console.log("연결")
     socekt.on("chatting", (data) => {
         console.log(data);
-        io.emit('chatting', `Hi ${data}`);
+        io.emit('chatting', data);
     });
 });
